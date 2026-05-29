@@ -1,0 +1,2 @@
+PySide6>=6.6.0
+# Note: PySide6 includes QtWebEngine by default in standard pip installations.
