@@ -1,7 +1,15 @@
 import sys
 import logging
+from pathlib import Path
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication
-from .browser_window import BrowserWindow
+
+# Allow running this file directly from the repository without a package import error
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from browser.browser_window import BrowserWindow
 
 # Configure standard logging format for engineering observability
 logging.basicConfig(

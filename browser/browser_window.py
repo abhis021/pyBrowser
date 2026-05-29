@@ -1,7 +1,7 @@
 import logging
 from PySide6.QtWidgets import (
-    QMainWindow, QTabWidget, QToolBar, QStatusBar, QMenu, 
-    QApplication, QMessageBox, QWidget, QVBoxLayout
+    QMainWindow, QTabWidget, QToolBar, QStatusBar, QMenu,
+    QApplication, QMessageBox, QWidget, QVBoxLayout, QLabel
 )
 from PySide6.QtGui import QAction, QKeySequence, QIcon
 from PySide6.QtCore import QUrl, Qt, QSettings
@@ -19,13 +19,13 @@ class BrowserWindow(QMainWindow):
     
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("ChromiumPy Browser")
+        self.setWindowTitle("pyBrowser")
         self.resize(1200, 800)
 
         # Managers (State)
         self.history_manager = HistoryManager()
         self.bookmark_manager = BookmarkManager()
-        self.settings = QSettings("MyBrowserProject", "ChromiumPy")
+        self.settings = QSettings("MyBrowserProject", "pyBrowser")
 
         # UI Setup
         self._setup_tabs()
